@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محرر صورالمستندات المدرسية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Cairo', 'Amiri Quran', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      @font-face {
+        font-family: '19304-alqabas-bold';
+        src: url('./assets/fonts/19304-alqabas-bold.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'Asir 2 Normal';
+        src: url('./assets/fonts/Asir-2-Normal.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'DG-Modal3at-Bold';
+        src: url('./assets/fonts/DG-Modal3at-Bold.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'Mj_Titr Collage';
+        src: url('./assets/fonts/Mj_Titr_Collage.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'PTBLDHAD';
+        src: url('./assets/fonts/PTBLDHAD.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'Yaser 1';
+        src: url('./assets/fonts/Yaser-1.ttf') format('truetype');
+      }
+      body {
+        font-family: 'Cairo', sans-serif;
+      }
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    </style>
+    <!-- Use relative path for styles -->
+    <link rel="stylesheet" href="./index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "url": "https://aistudiocdn.com/url@^0.11.4",
+    "@react-oauth/google": "https://aistudiocdn.com/@react-oauth/google@^0.12.2"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-100">
+    <div id="root"></div>
+    <!-- Point to the correct entry file for Vite using relative path -->
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>

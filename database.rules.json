@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "imageTemplates": {
+      ".read": true,
+      ".write": "auth != null && (auth.token.email == 'husiieen@gmail.com' || auth.token.email == 'hussienal.ambaree@gmail.com' || auth.token.email == 'kadum.j.r@gmail.com')"
+    }
+  }
+}
