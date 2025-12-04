@@ -9,6 +9,10 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
+    
+    // Safety check for env vars to prevent build crashes if undefined
+    const apiKey = env.GEMINI_API_KEY || '';
+    
     return {
       // This is crucial for GitHub Pages. It ensures assets are loaded relatively.
       // Using './' allows deployment to any repository name without hardcoding.
@@ -19,8 +23,8 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [react()],
       define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+        'process.env.API_KEY': JSON.stringify(apiKey),
+        'process.env.GEMINI_API_KEY': JSON.stringify(apiKey)
       },
       resolve: {
         alias: {
@@ -30,6 +34,7 @@ export default defineConfig(({ mode }) => {
       build: {
         outDir: 'dist',
         assetsDir: 'assets',
+        sourcemap: false
       }
     };
 });
